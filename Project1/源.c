@@ -5,7 +5,6 @@
 void main()
 {
 	char str[100], * p;
-	printf("ÇëÊäÈëÄÚÈİ£º\n");
 	gets(str);
 	p = str;
 	for (p = str; *p; p++)
