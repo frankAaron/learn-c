@@ -1,23 +1,22 @@
-//实验	有一个已经排好序的数组，要求输入一个数后，按原来排序的规律将它插入数组中
+//实验  	输入有一个英文句子，将每个单词的第一个字母改为大写
+//软件2316 朱昱杰
+#include <stdio.h>
 
-// 软件2316 朱昱杰
-#include"stdio.h"
-
-int main() {
-	int arr[8] = { 1,2,3,4,5,7,8 };
-	int m;
-	scanf_s("%d",&m);
-	for (int i = 0; i < 8; i++) {
-		if (arr[i] >= m) {
-			for (int j = 7; j > i; j--) {
-				arr[j] = arr[j - 1];
-			}
-			arr[i] = m;
-			break;
+void main()
+{
+	char str[100], * p;
+	printf("请输入内容：\n");
+	gets(str);
+	p = str;
+	for (p = str; *p; p++)
+	{
+		if (p == str && *p >= 'a' && *p <= 'z') 
+			*p = *p - 32;
+		if (*p == ' ')
+		{
+			if (*(p + 1) >= 'a' && *(p + 1) <= 'z') 
+				*(p + 1) = *(p + 1) - 32;
 		}
 	}
-	for (int i = 0; i < 8; i++) {
-		printf("%d",arr[i]);
-	}
-	return 0;
+	puts(str);
 }
